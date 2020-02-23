@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Primary
-@Profile("en")
+@Profile({"en","default"})
 public class PrimeryEnglishGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
