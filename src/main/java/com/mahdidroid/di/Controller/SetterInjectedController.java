@@ -10,4 +10,8 @@ public class SetterInjectedController {
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
+
+    String sayHello(){
+        return greetingService.sayGreeting();
+    }
 }
