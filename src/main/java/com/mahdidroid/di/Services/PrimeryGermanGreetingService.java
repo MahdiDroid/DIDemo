@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Primary
-@Profile("en")
+@Profile("deu")
 public class PrimeryGermanGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
-        return "Hallo from the primery greeting service";
+        return "primaere Grussdienst";
     }
 }
