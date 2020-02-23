@@ -1,5 +1,8 @@
 package com.mahdidroid.di.Services;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ConstructorGreetingService implements GreetingService {
 
     @Override
