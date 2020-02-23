@@ -2,10 +2,10 @@ package com.mahdidroid.di;
 
 
 import com.mahdidroid.di.Controller.PropertyInjectedController;
-import com.mahdidroid.di.Services.GreetingServiceImpl;
+import com.mahdidroid.di.Services.PropertyGreetingService;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -16,12 +16,12 @@ public class PropertyInjectedControllerTest {
     @Before
     public void setUp() throws Exception{
         this.propertyInjectedController= new PropertyInjectedController();
-        this.propertyInjectedController.greetingService = new GreetingServiceImpl();
+        this.propertyInjectedController.propertyGreetingService = new PropertyGreetingService();
 
     }
     @Test
      public void testGreeting()  throws Exception{
-        assertEquals(GreetingServiceImpl.Hello_folks, propertyInjectedController.sayHello());
+        assertEquals(PropertyGreetingService.Hello_folks, propertyInjectedController.sayHello());
     }
 
 

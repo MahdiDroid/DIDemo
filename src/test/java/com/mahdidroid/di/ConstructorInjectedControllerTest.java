@@ -1,8 +1,7 @@
 package com.mahdidroid.di;
 
 import com.mahdidroid.di.Controller.ConstructorInjectedController;
-import com.mahdidroid.di.Services.GreetingService;
-import com.mahdidroid.di.Services.GreetingServiceImpl;
+import com.mahdidroid.di.Services.PropertyGreetingService;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -15,10 +14,10 @@ public class ConstructorInjectedControllerTest {
 
     @Before
     public void setUp() throws Exception{
-        this.constructorInjectedController= new ConstructorInjectedController(new GreetingServiceImpl());
+        this.constructorInjectedController= new ConstructorInjectedController(new PropertyGreetingService());
     }
     @Test
     public void testGreeting() throws Exception{
-        assertEquals(GreetingServiceImpl.Hello_folks,constructorInjectedController.sayHello());
+        assertEquals(PropertyGreetingService.Hello_folks,constructorInjectedController.sayHello());
     }
 }
