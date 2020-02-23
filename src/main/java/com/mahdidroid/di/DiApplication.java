@@ -1,14 +1,26 @@
 package com.mahdidroid.di;
 
+import com.mahdidroid.di.Controller.ConstructorInjectedController;
+import com.mahdidroid.di.Controller.MyController;
+import com.mahdidroid.di.Controller.PropertyInjectedController;
+import com.mahdidroid.di.Controller.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class DiApplication {
 
     public static void main(String[] args)
     {
-        SpringApplication.run(DiApplication.class, args);
+       ApplicationContext ctx= SpringApplication.run(DiApplication.class, args);
+       MyController controller = (MyController)ctx.getBean(("myController"));
+       controller.hello();
+
+        System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
+       System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+
     }
 
 }
