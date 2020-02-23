@@ -7,7 +7,7 @@ public class SetterInjectedController {
 
     private GreetingService  greetingService;
 
-    public GreetingServiceImpl getGreetingService() {
-        return greetingService;
+    public void setGreetingService(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 }
